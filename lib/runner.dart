@@ -1,17 +1,18 @@
+import 'package:film_searcher/features/app/films_app.dart';
+import 'package:film_searcher/features/app/service/films_bloc_observer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:news_app/src/features/app/news_app.dart';
-import 'package:news_app/src/features/navigation/service/bloc/navigation_bloc.dart';
-import 'package:news_app/src/features/norifications/service/notification_service.dart';
 import 'package:surf_logger/surf_logger.dart';
+
+import 'features/navigation/service/bloc/navigation_bloc.dart';
 
 /// App launch
 Future<void> run() async {
   _initLogger();
+  Bloc.observer = const FilmsBlocObserver();
   WidgetsFlutterBinding.ensureInitialized();
-  NotificationService().initNotification();
   runApp(BlocProvider(
-      create: (context) => NavigationBloc(), child: const NewsApplication()));
+      create: (context) => NavigationBloc(), child: const FilmsApplication()));
 }
 
 void _initLogger() {
