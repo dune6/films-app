@@ -1,16 +1,24 @@
-# film_searcher
+# Приложение для поиска фильмов
 
-A new Flutter project.
+Написать приложение “Поиск фильмов”. Пользователь должен иметь возможность ввести в поисковое поле название и фильма и увидеть результаты выдачи.
 
-## Getting Started
+Для реализации воспользовался Кинопоиск API
 
-This project is a starting point for a Flutter application.
+### Стек приложения:
+- Технология: **flutter**
+- Логгирование: **surf_logger**
+- Стейт менеджер: **flutter_bloc**
+- Кодогенерация: **freezed**
+- Работа с REST API: **dio, http**
+- Локальная база данных: **shared_preferences**
+- Кеширование изображений: **cached_network_image**
 
-A few resources to get you started if this is your first Flutter project:
+Также в приложении реализована возможность сохранения последних 100 загруженных фильмов в локальную базу данных, кеширование загруженных изображений, обработка сетевого подключения или его отсутствия.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Тестирование приложения происходило на платформе Android.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### Демонстрация использования:
+
+![](video.mp4)
+
+
