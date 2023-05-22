@@ -21,22 +21,22 @@ Film _$FilmFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$Film {
   int get id => throw _privateConstructorUsedError;
-  String get name => throw _privateConstructorUsedError;
-  String get alternativeName => throw _privateConstructorUsedError;
-  String get enName => throw _privateConstructorUsedError;
-  List<String> get names => throw _privateConstructorUsedError;
-  String get type => throw _privateConstructorUsedError;
-  int get year => throw _privateConstructorUsedError;
-  String get description => throw _privateConstructorUsedError;
-  String get shortDescription => throw _privateConstructorUsedError;
-  String get logo => throw _privateConstructorUsedError;
-  String get poster => throw _privateConstructorUsedError;
-  String get backdrop => throw _privateConstructorUsedError;
-  double get rating => throw _privateConstructorUsedError;
-  int get votes => throw _privateConstructorUsedError;
-  int get movieLength => throw _privateConstructorUsedError;
-  List<String> get genres => throw _privateConstructorUsedError;
-  List<String> get countries => throw _privateConstructorUsedError;
+  String? get name => throw _privateConstructorUsedError;
+  String? get alternativeName => throw _privateConstructorUsedError;
+  String? get enName => throw _privateConstructorUsedError;
+  List<String>? get names => throw _privateConstructorUsedError;
+  String? get type => throw _privateConstructorUsedError;
+  int? get year => throw _privateConstructorUsedError;
+  String? get description => throw _privateConstructorUsedError;
+  String? get shortDescription => throw _privateConstructorUsedError;
+  String? get logo => throw _privateConstructorUsedError;
+  String? get poster => throw _privateConstructorUsedError;
+  String? get backdrop => throw _privateConstructorUsedError;
+  double? get rating => throw _privateConstructorUsedError;
+  int? get votes => throw _privateConstructorUsedError;
+  int? get movieLength => throw _privateConstructorUsedError;
+  List<String>? get genres => throw _privateConstructorUsedError;
+  List<String>? get countries => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -50,22 +50,22 @@ abstract class $FilmCopyWith<$Res> {
   @useResult
   $Res call(
       {int id,
-      String name,
-      String alternativeName,
-      String enName,
-      List<String> names,
-      String type,
-      int year,
-      String description,
-      String shortDescription,
-      String logo,
-      String poster,
-      String backdrop,
-      double rating,
-      int votes,
-      int movieLength,
-      List<String> genres,
-      List<String> countries});
+      String? name,
+      String? alternativeName,
+      String? enName,
+      List<String>? names,
+      String? type,
+      int? year,
+      String? description,
+      String? shortDescription,
+      String? logo,
+      String? poster,
+      String? backdrop,
+      double? rating,
+      int? votes,
+      int? movieLength,
+      List<String>? genres,
+      List<String>? countries});
 }
 
 /// @nodoc
@@ -82,92 +82,92 @@ class _$FilmCopyWithImpl<$Res, $Val extends Film>
   @override
   $Res call({
     Object? id = null,
-    Object? name = null,
-    Object? alternativeName = null,
-    Object? enName = null,
-    Object? names = null,
-    Object? type = null,
-    Object? year = null,
-    Object? description = null,
-    Object? shortDescription = null,
-    Object? logo = null,
-    Object? poster = null,
-    Object? backdrop = null,
-    Object? rating = null,
-    Object? votes = null,
-    Object? movieLength = null,
-    Object? genres = null,
-    Object? countries = null,
+    Object? name = freezed,
+    Object? alternativeName = freezed,
+    Object? enName = freezed,
+    Object? names = freezed,
+    Object? type = freezed,
+    Object? year = freezed,
+    Object? description = freezed,
+    Object? shortDescription = freezed,
+    Object? logo = freezed,
+    Object? poster = freezed,
+    Object? backdrop = freezed,
+    Object? rating = freezed,
+    Object? votes = freezed,
+    Object? movieLength = freezed,
+    Object? genres = freezed,
+    Object? countries = freezed,
   }) {
     return _then(_value.copyWith(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
-      name: null == name
+      name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      alternativeName: null == alternativeName
+              as String?,
+      alternativeName: freezed == alternativeName
           ? _value.alternativeName
           : alternativeName // ignore: cast_nullable_to_non_nullable
-              as String,
-      enName: null == enName
+              as String?,
+      enName: freezed == enName
           ? _value.enName
           : enName // ignore: cast_nullable_to_non_nullable
-              as String,
-      names: null == names
+              as String?,
+      names: freezed == names
           ? _value.names
           : names // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-      type: null == type
+              as List<String>?,
+      type: freezed == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
-              as String,
-      year: null == year
+              as String?,
+      year: freezed == year
           ? _value.year
           : year // ignore: cast_nullable_to_non_nullable
-              as int,
-      description: null == description
+              as int?,
+      description: freezed == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
-              as String,
-      shortDescription: null == shortDescription
+              as String?,
+      shortDescription: freezed == shortDescription
           ? _value.shortDescription
           : shortDescription // ignore: cast_nullable_to_non_nullable
-              as String,
-      logo: null == logo
+              as String?,
+      logo: freezed == logo
           ? _value.logo
           : logo // ignore: cast_nullable_to_non_nullable
-              as String,
-      poster: null == poster
+              as String?,
+      poster: freezed == poster
           ? _value.poster
           : poster // ignore: cast_nullable_to_non_nullable
-              as String,
-      backdrop: null == backdrop
+              as String?,
+      backdrop: freezed == backdrop
           ? _value.backdrop
           : backdrop // ignore: cast_nullable_to_non_nullable
-              as String,
-      rating: null == rating
+              as String?,
+      rating: freezed == rating
           ? _value.rating
           : rating // ignore: cast_nullable_to_non_nullable
-              as double,
-      votes: null == votes
+              as double?,
+      votes: freezed == votes
           ? _value.votes
           : votes // ignore: cast_nullable_to_non_nullable
-              as int,
-      movieLength: null == movieLength
+              as int?,
+      movieLength: freezed == movieLength
           ? _value.movieLength
           : movieLength // ignore: cast_nullable_to_non_nullable
-              as int,
-      genres: null == genres
+              as int?,
+      genres: freezed == genres
           ? _value.genres
           : genres // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-      countries: null == countries
+              as List<String>?,
+      countries: freezed == countries
           ? _value.countries
           : countries // ignore: cast_nullable_to_non_nullable
-              as List<String>,
+              as List<String>?,
     ) as $Val);
   }
 }
@@ -180,22 +180,22 @@ abstract class _$$_FilmCopyWith<$Res> implements $FilmCopyWith<$Res> {
   @useResult
   $Res call(
       {int id,
-      String name,
-      String alternativeName,
-      String enName,
-      List<String> names,
-      String type,
-      int year,
-      String description,
-      String shortDescription,
-      String logo,
-      String poster,
-      String backdrop,
-      double rating,
-      int votes,
-      int movieLength,
-      List<String> genres,
-      List<String> countries});
+      String? name,
+      String? alternativeName,
+      String? enName,
+      List<String>? names,
+      String? type,
+      int? year,
+      String? description,
+      String? shortDescription,
+      String? logo,
+      String? poster,
+      String? backdrop,
+      double? rating,
+      int? votes,
+      int? movieLength,
+      List<String>? genres,
+      List<String>? countries});
 }
 
 /// @nodoc
@@ -208,92 +208,92 @@ class __$$_FilmCopyWithImpl<$Res> extends _$FilmCopyWithImpl<$Res, _$_Film>
   @override
   $Res call({
     Object? id = null,
-    Object? name = null,
-    Object? alternativeName = null,
-    Object? enName = null,
-    Object? names = null,
-    Object? type = null,
-    Object? year = null,
-    Object? description = null,
-    Object? shortDescription = null,
-    Object? logo = null,
-    Object? poster = null,
-    Object? backdrop = null,
-    Object? rating = null,
-    Object? votes = null,
-    Object? movieLength = null,
-    Object? genres = null,
-    Object? countries = null,
+    Object? name = freezed,
+    Object? alternativeName = freezed,
+    Object? enName = freezed,
+    Object? names = freezed,
+    Object? type = freezed,
+    Object? year = freezed,
+    Object? description = freezed,
+    Object? shortDescription = freezed,
+    Object? logo = freezed,
+    Object? poster = freezed,
+    Object? backdrop = freezed,
+    Object? rating = freezed,
+    Object? votes = freezed,
+    Object? movieLength = freezed,
+    Object? genres = freezed,
+    Object? countries = freezed,
   }) {
     return _then(_$_Film(
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
               as int,
-      name: null == name
+      name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String,
-      alternativeName: null == alternativeName
+              as String?,
+      alternativeName: freezed == alternativeName
           ? _value.alternativeName
           : alternativeName // ignore: cast_nullable_to_non_nullable
-              as String,
-      enName: null == enName
+              as String?,
+      enName: freezed == enName
           ? _value.enName
           : enName // ignore: cast_nullable_to_non_nullable
-              as String,
-      names: null == names
+              as String?,
+      names: freezed == names
           ? _value._names
           : names // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-      type: null == type
+              as List<String>?,
+      type: freezed == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
-              as String,
-      year: null == year
+              as String?,
+      year: freezed == year
           ? _value.year
           : year // ignore: cast_nullable_to_non_nullable
-              as int,
-      description: null == description
+              as int?,
+      description: freezed == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
-              as String,
-      shortDescription: null == shortDescription
+              as String?,
+      shortDescription: freezed == shortDescription
           ? _value.shortDescription
           : shortDescription // ignore: cast_nullable_to_non_nullable
-              as String,
-      logo: null == logo
+              as String?,
+      logo: freezed == logo
           ? _value.logo
           : logo // ignore: cast_nullable_to_non_nullable
-              as String,
-      poster: null == poster
+              as String?,
+      poster: freezed == poster
           ? _value.poster
           : poster // ignore: cast_nullable_to_non_nullable
-              as String,
-      backdrop: null == backdrop
+              as String?,
+      backdrop: freezed == backdrop
           ? _value.backdrop
           : backdrop // ignore: cast_nullable_to_non_nullable
-              as String,
-      rating: null == rating
+              as String?,
+      rating: freezed == rating
           ? _value.rating
           : rating // ignore: cast_nullable_to_non_nullable
-              as double,
-      votes: null == votes
+              as double?,
+      votes: freezed == votes
           ? _value.votes
           : votes // ignore: cast_nullable_to_non_nullable
-              as int,
-      movieLength: null == movieLength
+              as int?,
+      movieLength: freezed == movieLength
           ? _value.movieLength
           : movieLength // ignore: cast_nullable_to_non_nullable
-              as int,
-      genres: null == genres
+              as int?,
+      genres: freezed == genres
           ? _value._genres
           : genres // ignore: cast_nullable_to_non_nullable
-              as List<String>,
-      countries: null == countries
+              as List<String>?,
+      countries: freezed == countries
           ? _value._countries
           : countries // ignore: cast_nullable_to_non_nullable
-              as List<String>,
+              as List<String>?,
     ));
   }
 }
@@ -306,7 +306,7 @@ class _$_Film implements _Film {
       required this.name,
       required this.alternativeName,
       required this.enName,
-      required final List<String> names,
+      required final List<String>? names,
       required this.type,
       required this.year,
       required this.description,
@@ -317,8 +317,8 @@ class _$_Film implements _Film {
       required this.rating,
       required this.votes,
       required this.movieLength,
-      required final List<String> genres,
-      required final List<String> countries})
+      required final List<String>? genres,
+      required final List<String>? countries})
       : _names = names,
         _genres = genres,
         _countries = countries;
@@ -328,53 +328,59 @@ class _$_Film implements _Film {
   @override
   final int id;
   @override
-  final String name;
+  final String? name;
   @override
-  final String alternativeName;
+  final String? alternativeName;
   @override
-  final String enName;
-  final List<String> _names;
+  final String? enName;
+  final List<String>? _names;
   @override
-  List<String> get names {
+  List<String>? get names {
+    final value = _names;
+    if (value == null) return null;
     if (_names is EqualUnmodifiableListView) return _names;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_names);
+    return EqualUnmodifiableListView(value);
   }
 
   @override
-  final String type;
+  final String? type;
   @override
-  final int year;
+  final int? year;
   @override
-  final String description;
+  final String? description;
   @override
-  final String shortDescription;
+  final String? shortDescription;
   @override
-  final String logo;
+  final String? logo;
   @override
-  final String poster;
+  final String? poster;
   @override
-  final String backdrop;
+  final String? backdrop;
   @override
-  final double rating;
+  final double? rating;
   @override
-  final int votes;
+  final int? votes;
   @override
-  final int movieLength;
-  final List<String> _genres;
+  final int? movieLength;
+  final List<String>? _genres;
   @override
-  List<String> get genres {
+  List<String>? get genres {
+    final value = _genres;
+    if (value == null) return null;
     if (_genres is EqualUnmodifiableListView) return _genres;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_genres);
+    return EqualUnmodifiableListView(value);
   }
 
-  final List<String> _countries;
+  final List<String>? _countries;
   @override
-  List<String> get countries {
+  List<String>? get countries {
+    final value = _countries;
+    if (value == null) return null;
     if (_countries is EqualUnmodifiableListView) return _countries;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_countries);
+    return EqualUnmodifiableListView(value);
   }
 
   @override
@@ -451,59 +457,59 @@ class _$_Film implements _Film {
 abstract class _Film implements Film {
   const factory _Film(
       {required final int id,
-      required final String name,
-      required final String alternativeName,
-      required final String enName,
-      required final List<String> names,
-      required final String type,
-      required final int year,
-      required final String description,
-      required final String shortDescription,
-      required final String logo,
-      required final String poster,
-      required final String backdrop,
-      required final double rating,
-      required final int votes,
-      required final int movieLength,
-      required final List<String> genres,
-      required final List<String> countries}) = _$_Film;
+      required final String? name,
+      required final String? alternativeName,
+      required final String? enName,
+      required final List<String>? names,
+      required final String? type,
+      required final int? year,
+      required final String? description,
+      required final String? shortDescription,
+      required final String? logo,
+      required final String? poster,
+      required final String? backdrop,
+      required final double? rating,
+      required final int? votes,
+      required final int? movieLength,
+      required final List<String>? genres,
+      required final List<String>? countries}) = _$_Film;
 
   factory _Film.fromJson(Map<String, dynamic> json) = _$_Film.fromJson;
 
   @override
   int get id;
   @override
-  String get name;
+  String? get name;
   @override
-  String get alternativeName;
+  String? get alternativeName;
   @override
-  String get enName;
+  String? get enName;
   @override
-  List<String> get names;
+  List<String>? get names;
   @override
-  String get type;
+  String? get type;
   @override
-  int get year;
+  int? get year;
   @override
-  String get description;
+  String? get description;
   @override
-  String get shortDescription;
+  String? get shortDescription;
   @override
-  String get logo;
+  String? get logo;
   @override
-  String get poster;
+  String? get poster;
   @override
-  String get backdrop;
+  String? get backdrop;
   @override
-  double get rating;
+  double? get rating;
   @override
-  int get votes;
+  int? get votes;
   @override
-  int get movieLength;
+  int? get movieLength;
   @override
-  List<String> get genres;
+  List<String>? get genres;
   @override
-  List<String> get countries;
+  List<String>? get countries;
   @override
   @JsonKey(ignore: true)
   _$$_FilmCopyWith<_$_Film> get copyWith => throw _privateConstructorUsedError;

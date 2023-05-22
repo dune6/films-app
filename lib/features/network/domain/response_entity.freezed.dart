@@ -20,11 +20,11 @@ ResponseEntity _$ResponseEntityFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$ResponseEntity {
-  List<Film> get docs => throw _privateConstructorUsedError;
-  int get total => throw _privateConstructorUsedError;
-  int get limit => throw _privateConstructorUsedError;
-  int get page => throw _privateConstructorUsedError;
-  int get pages => throw _privateConstructorUsedError;
+  List<Film>? get docs => throw _privateConstructorUsedError;
+  int? get total => throw _privateConstructorUsedError;
+  int? get limit => throw _privateConstructorUsedError;
+  int? get page => throw _privateConstructorUsedError;
+  int? get pages => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -38,7 +38,7 @@ abstract class $ResponseEntityCopyWith<$Res> {
           ResponseEntity value, $Res Function(ResponseEntity) then) =
       _$ResponseEntityCopyWithImpl<$Res, ResponseEntity>;
   @useResult
-  $Res call({List<Film> docs, int total, int limit, int page, int pages});
+  $Res call({List<Film>? docs, int? total, int? limit, int? page, int? pages});
 }
 
 /// @nodoc
@@ -54,33 +54,33 @@ class _$ResponseEntityCopyWithImpl<$Res, $Val extends ResponseEntity>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? docs = null,
-    Object? total = null,
-    Object? limit = null,
-    Object? page = null,
-    Object? pages = null,
+    Object? docs = freezed,
+    Object? total = freezed,
+    Object? limit = freezed,
+    Object? page = freezed,
+    Object? pages = freezed,
   }) {
     return _then(_value.copyWith(
-      docs: null == docs
+      docs: freezed == docs
           ? _value.docs
           : docs // ignore: cast_nullable_to_non_nullable
-              as List<Film>,
-      total: null == total
+              as List<Film>?,
+      total: freezed == total
           ? _value.total
           : total // ignore: cast_nullable_to_non_nullable
-              as int,
-      limit: null == limit
+              as int?,
+      limit: freezed == limit
           ? _value.limit
           : limit // ignore: cast_nullable_to_non_nullable
-              as int,
-      page: null == page
+              as int?,
+      page: freezed == page
           ? _value.page
           : page // ignore: cast_nullable_to_non_nullable
-              as int,
-      pages: null == pages
+              as int?,
+      pages: freezed == pages
           ? _value.pages
           : pages // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
     ) as $Val);
   }
 }
@@ -93,7 +93,7 @@ abstract class _$$_ResponseEntityCopyWith<$Res>
       __$$_ResponseEntityCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({List<Film> docs, int total, int limit, int page, int pages});
+  $Res call({List<Film>? docs, int? total, int? limit, int? page, int? pages});
 }
 
 /// @nodoc
@@ -107,33 +107,33 @@ class __$$_ResponseEntityCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? docs = null,
-    Object? total = null,
-    Object? limit = null,
-    Object? page = null,
-    Object? pages = null,
+    Object? docs = freezed,
+    Object? total = freezed,
+    Object? limit = freezed,
+    Object? page = freezed,
+    Object? pages = freezed,
   }) {
     return _then(_$_ResponseEntity(
-      docs: null == docs
+      docs: freezed == docs
           ? _value._docs
           : docs // ignore: cast_nullable_to_non_nullable
-              as List<Film>,
-      total: null == total
+              as List<Film>?,
+      total: freezed == total
           ? _value.total
           : total // ignore: cast_nullable_to_non_nullable
-              as int,
-      limit: null == limit
+              as int?,
+      limit: freezed == limit
           ? _value.limit
           : limit // ignore: cast_nullable_to_non_nullable
-              as int,
-      page: null == page
+              as int?,
+      page: freezed == page
           ? _value.page
           : page // ignore: cast_nullable_to_non_nullable
-              as int,
-      pages: null == pages
+              as int?,
+      pages: freezed == pages
           ? _value.pages
           : pages // ignore: cast_nullable_to_non_nullable
-              as int,
+              as int?,
     ));
   }
 }
@@ -142,7 +142,7 @@ class __$$_ResponseEntityCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_ResponseEntity implements _ResponseEntity {
   const _$_ResponseEntity(
-      {required final List<Film> docs,
+      {required final List<Film>? docs,
       required this.total,
       required this.limit,
       required this.page,
@@ -152,22 +152,24 @@ class _$_ResponseEntity implements _ResponseEntity {
   factory _$_ResponseEntity.fromJson(Map<String, dynamic> json) =>
       _$$_ResponseEntityFromJson(json);
 
-  final List<Film> _docs;
+  final List<Film>? _docs;
   @override
-  List<Film> get docs {
+  List<Film>? get docs {
+    final value = _docs;
+    if (value == null) return null;
     if (_docs is EqualUnmodifiableListView) return _docs;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_docs);
+    return EqualUnmodifiableListView(value);
   }
 
   @override
-  final int total;
+  final int? total;
   @override
-  final int limit;
+  final int? limit;
   @override
-  final int page;
+  final int? page;
   @override
-  final int pages;
+  final int? pages;
 
   @override
   String toString() {
@@ -207,25 +209,25 @@ class _$_ResponseEntity implements _ResponseEntity {
 
 abstract class _ResponseEntity implements ResponseEntity {
   const factory _ResponseEntity(
-      {required final List<Film> docs,
-      required final int total,
-      required final int limit,
-      required final int page,
-      required final int pages}) = _$_ResponseEntity;
+      {required final List<Film>? docs,
+      required final int? total,
+      required final int? limit,
+      required final int? page,
+      required final int? pages}) = _$_ResponseEntity;
 
   factory _ResponseEntity.fromJson(Map<String, dynamic> json) =
       _$_ResponseEntity.fromJson;
 
   @override
-  List<Film> get docs;
+  List<Film>? get docs;
   @override
-  int get total;
+  int? get total;
   @override
-  int get limit;
+  int? get limit;
   @override
-  int get page;
+  int? get page;
   @override
-  int get pages;
+  int? get pages;
   @override
   @JsonKey(ignore: true)
   _$$_ResponseEntityCopyWith<_$_ResponseEntity> get copyWith =>

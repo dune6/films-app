@@ -1,8 +1,5 @@
 import 'package:film_searcher/features/movies/domain/film_model.dart';
-import 'package:film_searcher/features/movies/screens/films.dart';
-import 'package:film_searcher/features/movies/service/films_bloc/films_bloc.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'film_list_item.dart';
 
@@ -17,8 +14,6 @@ class FilmListWidget extends StatefulWidget {
 }
 
 class _FilmListWidgetState extends State<FilmListWidget> {
-  final _scrollController = ScrollController();
-
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
@@ -28,7 +23,6 @@ class _FilmListWidgetState extends State<FilmListWidget> {
       itemCount: widget.films.length,
       itemExtent: 296,
       scrollDirection: Axis.vertical,
-      controller: _scrollController,
       shrinkWrap: true,
       itemBuilder: (context, index) {
         return Padding(
@@ -39,29 +33,5 @@ class _FilmListWidgetState extends State<FilmListWidget> {
         );
       },
     );
-  }
-
-  @override
-  void dispose() {
-    _scrollController
-      ..removeListener(_onScroll)
-      ..dispose();
-    super.dispose();
-  }
-
-  void _onScroll() {
-    final filmsScreen = context.findAncestorWidgetOfExactType<FilmsScreen>();
-    if (_isBottom) {
-      context
-          .read<FilmsBloc>()
-          .add(FilmsFetched(textFilter: filmsScreen?.text ?? ''));
-    }
-  }
-
-  bool get _isBottom {
-    if (!_scrollController.hasClients) return false;
-    final maxScroll = _scrollController.position.maxScrollExtent;
-    final currentScroll = _scrollController.offset;
-    return currentScroll >= (maxScroll * 0.9);
   }
 }

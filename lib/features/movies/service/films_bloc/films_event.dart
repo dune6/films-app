@@ -18,3 +18,5 @@ class FilmsSaveLocally extends FilmsEvent {
 }
 
 class FilmsLoadLocally extends FilmsEvent {}
+
+class FilmsClearData extends FilmsEvent {}

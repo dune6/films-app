@@ -11,9 +11,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:surf_logger/surf_logger.dart';
 
 class FilmsScreen extends StatefulWidget {
-  String? text;
-
-  FilmsScreen({
+  const FilmsScreen({
     Key? key,
   }) : super(key: key);
 
@@ -24,12 +22,14 @@ class FilmsScreen extends StatefulWidget {
 class _FilmsScreenState extends State<FilmsScreen> {
   final TextEditingController textEditingController = TextEditingController();
   late StreamSubscription<ConnectivityResult> _subscription;
+  final _scrollController = ScrollController();
 
   @override
   void initState() {
     super.initState();
 
     textEditingController.addListener(_filterFilms);
+    _scrollController.addListener(_onScroll);
 
     // watch connection
     _subscription =
@@ -74,12 +74,16 @@ class _FilmsScreenState extends State<FilmsScreen> {
   @override
   void dispose() {
     _subscription.cancel();
+    _scrollController
+      ..removeListener(_onScroll)
+      ..dispose();
     super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
     return ListView(
+      controller: _scrollController,
       keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
       children: [
         const SizedBox(
@@ -107,6 +111,7 @@ class _FilmsScreenState extends State<FilmsScreen> {
                     height: 32,
                   ),
                   TextFormField(
+                    onTap: () => {},
                     controller: textEditingController,
                     style: Theme.of(context).textTheme.labelMedium,
                     decoration: InputDecoration(
@@ -160,8 +165,26 @@ class _FilmsScreenState extends State<FilmsScreen> {
 
   // filter films by text input
   void _filterFilms() {
+    Logger.d(textEditingController.text);
+    Logger.d(context.read<FilmsBloc>().state.page.toString());
+    context.read<FilmsBloc>().add(FilmsClearData());
     context
         .read<FilmsBloc>()
         .add(FilmsFetched(textFilter: textEditingController.text));
+  }
+
+  void _onScroll() {
+    if (_isBottom) {
+      context
+          .read<FilmsBloc>()
+          .add(FilmsFetched(textFilter: textEditingController.text));
+    }
+  }
+
+  bool get _isBottom {
+    if (!_scrollController.hasClients) return false;
+    final maxScroll = _scrollController.position.maxScrollExtent;
+    final currentScroll = _scrollController.offset;
+    return currentScroll >= (maxScroll * 0.9);
   }
 }

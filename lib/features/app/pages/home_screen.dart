@@ -21,7 +21,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  static int _selectedIndex = 1;
+  static int _selectedIndex = 0;
   static AppDiContainer diContainer = AppDiContainer();
 
   @override
@@ -41,7 +41,9 @@ class _HomeScreenState extends State<HomeScreen> {
             builder: (context, state) {
               switch (state.runtimeType) {
                 case NavigationFilmsState:
-                  return FilmsScreen();
+                  return FilmsScreen(
+                    key: GlobalKey(),
+                  );
                 case NavigationCategoriesState:
                   return Text(state.runtimeType.toString());
                 case NavigationFavouritesState:

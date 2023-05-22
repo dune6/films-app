@@ -44,7 +44,7 @@ class FilmListItem extends StatelessWidget {
                   fadeInDuration: const Duration(seconds: 1),
                   fit: BoxFit.fitWidth,
                   alignment: Alignment.topCenter,
-                  imageUrl: film.poster,
+                  imageUrl: film.poster ?? film.poster ?? film.backdrop ?? '',
                 ),
               ),
             ),
@@ -75,7 +75,7 @@ class FilmListItem extends StatelessWidget {
                                 );
                               }),
                               child: Text(
-                                film.name == '' ? 'Empty title' : film.name,
+                                film.name ?? 'Empty name',
                                 maxLines: 2,
                                 overflow: TextOverflow.ellipsis,
                                 style: Theme.of(context).textTheme.titleMedium,

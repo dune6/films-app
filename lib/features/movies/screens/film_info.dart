@@ -46,7 +46,7 @@ class _FilmInfoScreenState extends State<FilmInfoScreen> {
               iconTheme: const IconThemeData(color: AppColors.blackDarker),
               flexibleSpace: FlexibleSpaceBar(
                   title: Text(
-                    widget.film.name,
+                    widget.film.name ?? 'Empty name',
                     style: Theme.of(context)
                         .textTheme
                         .titleLarge
@@ -68,9 +68,13 @@ class _FilmInfoScreenState extends State<FilmInfoScreen> {
                     fadeInDuration: const Duration(seconds: 1),
                     placeholderFadeInDuration: const Duration(seconds: 1),
                     fadeInCurve: Curves.easeOutExpo,
-                    fit: BoxFit.fitHeight,
+                    fit: MediaQuery.of(context).size.height >
+                            MediaQuery.of(context).size.width
+                        ? BoxFit.fitWidth
+                        : BoxFit.fitWidth,
                     alignment: Alignment.topCenter,
-                    imageUrl: widget.film.backdrop,
+                    imageUrl: widget.film.poster ?? '',
+                    filterQuality: FilterQuality.medium,
                   )),
               bottom: PreferredSize(
                 preferredSize: const Size.fromHeight(24),
@@ -115,7 +119,7 @@ class _FilmInfoScreenState extends State<FilmInfoScreen> {
                             height: 8,
                           ),
                           Text(
-                            widget.film.genres.first ?? '',
+                            widget.film.genres?.first ?? '',
                             style: Theme.of(context)
                                 .textTheme
                                 .bodySmall
@@ -125,7 +129,7 @@ class _FilmInfoScreenState extends State<FilmInfoScreen> {
                             height: 8,
                           ),
                           Text(
-                            widget.film.countries.first ?? '',
+                            widget.film.countries?.first ?? '',
                             style: Theme.of(context)
                                 .textTheme
                                 .bodySmall

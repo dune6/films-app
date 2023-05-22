@@ -6,9 +6,8 @@ part 'navigation_event.dart';
 part 'navigation_state.dart';
 
 class NavigationBloc extends Bloc<NavigationEvent, NavigationState> {
-  NavigationBloc() : super(NavigationCategoriesState()) {
-    on<NavigationToFilmsEvent>(
-        (event, emit) => emit(NavigationFilmsState()));
+  NavigationBloc() : super(NavigationFilmsState()) {
+    on<NavigationToFilmsEvent>((event, emit) => emit(NavigationFilmsState()));
     on<NavigationToCategoriesEvent>(
         (event, emit) => emit(NavigationCategoriesState()));
     on<NavigationToFavouritesEvent>(

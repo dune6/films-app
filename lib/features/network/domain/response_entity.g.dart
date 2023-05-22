@@ -8,13 +8,13 @@ part of 'response_entity.dart';
 
 _$_ResponseEntity _$$_ResponseEntityFromJson(Map<String, dynamic> json) =>
     _$_ResponseEntity(
-      docs: (json['docs'] as List<dynamic>)
-          .map((e) => Film.fromJson(e as Map<String, dynamic>))
+      docs: (json['docs'] as List<dynamic>?)
+          ?.map((e) => Film.fromJson(e as Map<String, dynamic>))
           .toList(),
-      total: json['total'] as int,
-      limit: json['limit'] as int,
-      page: json['page'] as int,
-      pages: json['pages'] as int,
+      total: json['total'] as int?,
+      limit: json['limit'] as int?,
+      page: json['page'] as int?,
+      pages: json['pages'] as int?,
     );
 
 Map<String, dynamic> _$$_ResponseEntityToJson(_$_ResponseEntity instance) =>

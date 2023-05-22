@@ -14,6 +14,7 @@ part 'films_state.dart';
 const throttleDuration = Duration(milliseconds: 200);
 
 EventTransformer<E> throttleDroppable<E>(Duration duration) {
+  Logger.d('transformer!');
   return (events, mapper) {
     return droppable<E>().call(events.throttle(duration), mapper);
   };
@@ -24,8 +25,7 @@ class FilmsBloc extends Bloc<FilmsEvent, FilmsState> {
   final FilmsRepository filmsRepository;
   final SharedPreferencesProvider preferencesProvider;
 
-  FilmsBloc(
-      {required this.filmsRepository, required this.preferencesProvider})
+  FilmsBloc({required this.filmsRepository, required this.preferencesProvider})
       : super(const FilmsState()) {
     on<FilmsFetched>(
       _onFilmsFetched,
@@ -33,6 +33,12 @@ class FilmsBloc extends Bloc<FilmsEvent, FilmsState> {
     );
     on<FilmsSaveLocally>(_saveFilmsLocally);
     on<FilmsLoadLocally>(_giveFilmsLocally);
+    on<FilmsClearData>(_clearData);
+  }
+
+  void _clearData(FilmsClearData event, Emitter emit) {
+    emit(const FilmsState(
+        page: 1, status: FilmsStatus.initial, films: [], hasReachedMax: false));
   }
 
   Future<void> _onFilmsFetched(
@@ -54,13 +60,13 @@ class FilmsBloc extends Bloc<FilmsEvent, FilmsState> {
       final responseEntity =
           await filmsRepository.searchFilms(event.textFilter, page + 1);
       // save locally loaded films
-      await preferencesProvider.saveFilms(responseEntity.docs);
+      await preferencesProvider.saveFilms(responseEntity.docs ?? []);
 
-      emit(responseEntity.docs.isEmpty
+      emit(responseEntity.docs!.isEmpty
           ? state.copyWith(hasReachedMax: true)
           : state.copyWith(
               status: FilmsStatus.success,
-              films: List.of(state.films)..addAll(responseEntity.docs),
+              films: List.of(state.films)..addAll(responseEntity.docs ?? []),
               hasReachedMax: false,
               page: responseEntity.page));
     } catch (_) {

@@ -8,11 +8,11 @@ part 'response_entity.g.dart';
 @Freezed()
 class ResponseEntity with _$ResponseEntity {
   const factory ResponseEntity({
-    required List<Film> docs,
-    required int total,
-    required int limit,
-    required int page,
-    required int pages,
+    required List<Film>? docs,
+    required int? total,
+    required int? limit,
+    required int? page,
+    required int? pages,
   }) = _ResponseEntity;
 
   factory ResponseEntity.fromJson(Map<String, dynamic> json) =>
